@@ -1,4 +1,5 @@
-﻿using APIWithDatabase.Models;
+﻿
+using APIWithDatabase.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,7 +29,7 @@ namespace APIWithDatabase.Controllers
         public IActionResult GetCategoryById(int id)
         {
             var select = _db.Categories.Where(c => c.CategoryId == id).ToList();
-            if(select == null)
+            if (select == null)
             {
                 return BadRequest();
             }
@@ -38,7 +39,7 @@ namespace APIWithDatabase.Controllers
         [HttpPost]
         public IActionResult AddCategory(string name)
         {
-            if(name == null || name.Equals(""))
+            if (name == null || name.Equals(""))
             {
                 return BadRequest();
             }
@@ -53,7 +54,7 @@ namespace APIWithDatabase.Controllers
         public IActionResult UpdateCategory(int id, string name)
         {
             var check = _db.Categories.Find(id);
-            if(check == null)
+            if (check == null)
             {
                 return NotFound();
             }
@@ -71,9 +72,9 @@ namespace APIWithDatabase.Controllers
                 return NotFound();
             }
             var listP = _db.Products.Where(p => p.CategoryId == id).ToList();
-            foreach(var c in listP)
+            foreach (var c in listP)
             {
-                if(c.CategoryId == id)
+                if (c.CategoryId == id)
                 {
                     _db.Products.Remove(c);
                     _db.SaveChanges();

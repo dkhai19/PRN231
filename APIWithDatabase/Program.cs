@@ -1,3 +1,4 @@
+
 using APIWithDatabase.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,7 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<MySaleDBContext>(options => options.UseSqlServer(
-      builder.Configuration.GetConnectionString("MyCnn")  
+      builder.Configuration.GetConnectionString("MyCnn")
     ));
 
 var app = builder.Build();

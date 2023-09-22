@@ -1,5 +1,6 @@
 ﻿using APIWithDatabase.Data;
 using APIWithDatabase.Models;
+//using APIWithDatabase.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,7 +35,7 @@ namespace APIWithDatabase.Controllers
         [HttpPost]
         public IActionResult AddProduct(AddProduct item)
         {
-            if(item == null || !ModelState.IsValid)
+            if (item == null || !ModelState.IsValid)
             {
                 return BadRequest("Invalid data");
             }
