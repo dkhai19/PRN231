@@ -28,7 +28,18 @@ namespace APIWithDatabase.Controllers
         [HttpGet("id")]
         public IActionResult GetCategoryById(int id)
         {
-            var select = _db.Categories.Where(c => c.CategoryId == id).ToList();
+            var select = _db.Categories.SingleOrDefault(x => x.CategoryId==id);
+            if (select == null)
+            {
+                return BadRequest();
+            }
+            return Ok(select);
+        }
+
+        [HttpGet("name")]
+        public IActionResult GetCategoryByName(string name)
+        {
+            var select = _db.Categories.Where(x => x.CategoryName.Contains(name));
             if (select == null)
             {
                 return BadRequest();
