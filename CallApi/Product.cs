@@ -1,10 +1,14 @@
-﻿using System;
+﻿using CallApi.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
-namespace APIWithDatabase.Models
+namespace CallApi
 {
-    public partial class Product
+    public class Product
     {
         public int ProductId { get; set; }
         public string? ProductName { get; set; }
@@ -15,5 +19,10 @@ namespace APIWithDatabase.Models
 
         [JsonIgnore]
         public virtual Category? Category { get; set; }
+
+        public override string? ToString()
+        {
+            return ProductId + "\t" + ProductName + "\t" + UnitPrice + "\t" + UnitsInStock + "\t" + Image + "\t" + CategoryId;
+        }
     }
 }

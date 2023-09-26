@@ -48,28 +48,26 @@ namespace APIWithDatabase.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddCategory(string name)
+        public IActionResult AddCategory(Category c)
         {
-            if (name == null || name.Equals(""))
+            if (c.CategoryName == null)
             {
                 return BadRequest();
             }
-            Category c = new Category();
-            c.CategoryName = name;
             _db.Categories.Add(c);
             _db.SaveChanges();
             return Ok(c);
         }
 
         [HttpPut]
-        public IActionResult UpdateCategory(int id, string name)
+        public IActionResult UpdateCategory(Category category)
         {
-            var check = _db.Categories.Find(id);
+            var check = _db.Categories.Find(category.CategoryId);
             if (check == null)
             {
                 return NotFound();
             }
-            check.CategoryName = name;
+            check.CategoryName = category.CategoryName;
             _db.SaveChanges();
             return Ok(check);
         }

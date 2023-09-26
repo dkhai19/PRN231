@@ -59,10 +59,32 @@ namespace APIWithDatabase.Controllers
             }
         }
 
+        [HttpPut]
+        public IActionResult UpdateProduct(Product product)
+        {
+            var item = _db.Products.Find(product.ProductId);
+            if(item == null)
+            {
+                return NotFound();
+            }
+            item.ProductName = product.ProductName;
+            item.UnitPrice = product.UnitPrice;
+            item.UnitsInStock = product.UnitsInStock;
+            item.Image = product.Image;
+            item.CategoryId = product.CategoryId;
+            
+            _db.SaveChanges();
+            return Ok(item);
+        }
+
         [HttpDelete]
         public IActionResult DeleteProduct(int id)
         {
             var check = _db.Products.Find(id);
+            if(check == null)
+            {
+                return NotFound();
+            }
             _db.Products.Remove(check);
             _db.SaveChanges();
             return Ok();
