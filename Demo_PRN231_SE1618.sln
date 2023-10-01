@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIsDemo", "APIsDemo\APIsDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIWithDatabase", "APIWithDatabase\APIWithDatabase.csproj", "{A8AA22BE-010E-4F60-AAFC-CAA171EA8799}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallApi", "CallApi\CallApi.csproj", "{53B44F51-A20B-459F-B635-9C954953823A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallApi", "CallApi\CallApi.csproj", "{53B44F51-A20B-459F-B635-9C954953823A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCWebCallAPI", "MVCWebCallAPI\MVCWebCallAPI.csproj", "{D09A9A20-935C-4AEC-9D06-F2EB73AA5817}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{53B44F51-A20B-459F-B635-9C954953823A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53B44F51-A20B-459F-B635-9C954953823A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53B44F51-A20B-459F-B635-9C954953823A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D09A9A20-935C-4AEC-9D06-F2EB73AA5817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D09A9A20-935C-4AEC-9D06-F2EB73AA5817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D09A9A20-935C-4AEC-9D06-F2EB73AA5817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D09A9A20-935C-4AEC-9D06-F2EB73AA5817}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

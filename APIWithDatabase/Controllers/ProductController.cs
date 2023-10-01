@@ -26,9 +26,13 @@ namespace APIWithDatabase.Controllers
         }
 
         [HttpGet("id")]
-        public IActionResult GetProductById(int ID)
+        public IActionResult GetProductById(int id)
         {
-            var findItem = _db.Products.Find(ID);
+            var findItem = _db.Products.Find(id);
+            if(findItem == null)
+            {
+                return NotFound();
+            }
             return Ok(findItem);
         }
 
